@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import AppNavigator from './AppNavigator';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import darkScrollbar from '@mui/material/darkScrollbar';
 
-function App() {
+var darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: (themeParam) => ({
+        body: themeParam.palette.mode === 'dark' ? darkScrollbar() : null,
+      }),
+    },
+  },
+});
+
+darkTheme = responsiveFontSizes(darkTheme);
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+       <ThemeProvider theme={darkTheme}>
+      <CssBaseline enableColorScheme />
+      <AppNavigator />
+      </ThemeProvider>
+    </Router>
   );
 }
-
-export default App;

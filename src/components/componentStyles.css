@@ -1,0 +1,105 @@
+.sectionLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    text-wrap: nowrap;
+}
+
+.sectionHeading {
+    font-size: 28px;
+    font-weight: 800;
+    color: rgb(191, 152, 206);
+}
+
+/*Reports Component Styling*/
+.mainArea {
+    height: 100% !important;  
+}
+
+.cardsAreas {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    padding-top: 0px;
+    text-overflow: ellipsis;
+}
+
+.revenueCard {
+    border-radius: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 280px;
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+.revenueCard:hover {
+    background: rgba(255,255,255,0.1) !important;
+    cursor: pointer;
+}
+
+.iconDiv {
+    padding: 25px;    
+    display: flex;
+    border-right: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+.descriptionDiv {
+    display: flex;
+    padding: 10px 5px;
+    flex-direction: column;
+}
+
+.cardTagIcon {
+    font-size: 40px !important;
+    color: white;
+}
+
+.dataGridHolder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .cardsAreas {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .revenueCard {
+        flex-direction: row;
+        align-items: center;
+        width: 100%; 
+        padding: 0px 15px;        
+    }
+
+    .iconDiv {
+        border-right: none; 
+        padding: 15px; 
+    }
+
+
+    .rowToCol {
+        display: flex !important;
+        flex-direction: column !important;
+       
+    }
+
+    .colToRow {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+    }
+    
+}
